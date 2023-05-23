@@ -9,20 +9,20 @@ task15();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void task10()
 {
-    String number;
+    int number;
     while (true)
     {
         Console.Write("Введите трехзначное число: ");
-        number = Console.ReadLine();
-        if (number.Length == 3) break;
+        number = int.Parse(Console.ReadLine());
+        if (number > 99 && number < 1000) break;
         Console.Write("Число не трехзначное! ");
     }
     printSecondDigit(number);
 }
 
-void printSecondDigit(String number)
+void printSecondDigit(int number)
 {
-    Console.WriteLine(number[1]);
+    Console.WriteLine(number / 10 % 10);
 }
 
 
@@ -32,18 +32,27 @@ void printSecondDigit(String number)
 void task13()
 {
     Console.Write("Введите число: ");
-    String number = Console.ReadLine();
-    if (number.Length < 3)
+    int number = int.Parse(Console.ReadLine());
+    if (number / 100 <= 0)
     {
         Console.Write("Третьей цифры нет");
         return;
     }
-    printThirdDigit(number);
+    else if (number / 100 > 9)
+    {
+        printThirdDigit(number);
+    }
+    else
+    {
+        Console.WriteLine(number % 10);
+    }
 }
 
-void printThirdDigit(String number)
+void printThirdDigit(int number)
 {
-    Console.WriteLine(number[2]);
+    while (number > 999)
+        number = number / 10;
+    Console.WriteLine(number % 10);
 }
 
 
@@ -63,11 +72,11 @@ void task15()
         {
             if (number == 6 || number == 7)
             {
-                Console.WriteLine(number + " -> да");
+                Console.WriteLine(number + " -> да\n");
             }
             else
             {
-                Console.WriteLine(number + " -> нет");
+                Console.WriteLine(number + " -> нет\n");
             }
         }
         else
