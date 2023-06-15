@@ -13,7 +13,7 @@ void task10()
     while (true)
     {
         Console.Write("Введите трехзначное число: ");
-        number = int.Parse(Console.ReadLine());
+        number = int.Parse(Console.ReadLine()!);
         if (number > 99 && number < 1000) break;
         Console.Write("Число не трехзначное! ");
     }
@@ -32,7 +32,7 @@ void printSecondDigit(int number)
 void task13()
 {
     Console.Write("Введите число: ");
-    int number = int.Parse(Console.ReadLine());
+    int number = int.Parse(Console.ReadLine()!);
     if (number / 100 <= 0)
     {
         Console.Write("Третьей цифры нет");
@@ -66,7 +66,7 @@ void task15()
     {
         Console.WriteLine("Чтобы выйти введите число 0.");
         Console.Write("Введите число обозначающую день недели: ");
-        number = int.Parse(Console.ReadLine());
+        number = int.Parse(Console.ReadLine()!);
         if (number == 0) break;
         if (number > 0 && number <= 7)
         {
