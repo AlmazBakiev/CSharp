@@ -6,7 +6,6 @@ int layer = Prompt("Введите количество слоев массив�
 int[,,] array = GetArray(rows, columns, layer);
 PrintArray(array);
 
-
 int Prompt(string message)
 {
     Console.Write(message);
@@ -32,7 +31,7 @@ int[,,] GetArray(int rows, int columns, int layer)
                     counterForExit++;
                     number = random.Next(10, 100);
                     if (isExist[number] == 0) break;
-                    if (counterForExit == 100) return result;
+                    if (counterForExit == 4900) return result;
                 }
                 result[i, j, z] = number;
                 isExist[result[i, j, z]]++;
